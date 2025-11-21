@@ -227,9 +227,9 @@ void Merger::MergeGroup (const GroupType &group, PolysType &merged) {
         }
     }
 
-#ifdef DEBUG
-    WriteVTK("linesA.vtk", linesA);
-#endif
+// #ifdef DEBUG
+//     WriteVTK("linesA.vtk", linesA);
+// #endif
 
     auto bspTreeA = vtkSmartPointer<vtkModifiedBSPTree>::New();
     bspTreeA->SetDataSet(linesA);
@@ -558,9 +558,9 @@ void Merger::MergeGroup (const GroupType &group, PolysType &merged) {
         }
     }
 
-#ifdef DEBUG
-    WriteVTK("linesB.vtk", linesB);
-#endif
+// #ifdef DEBUG
+//     WriteVTK("linesB.vtk", linesB);
+// #endif
 
     ConnsType2 usedConns(firstConns.begin(), firstConns.end());
 

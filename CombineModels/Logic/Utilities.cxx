@@ -78,17 +78,17 @@ void FindPoints (vtkKdTreePointLocator *pl, const double *pt, vtkIdList *pts, do
     closest->Delete();
 }
 
-#ifdef DEBUG
-void WriteVTK (const char *name, vtkPolyData *pd) {
-    std::cout << "Writing " << name << std::endl;
-
-    vtkPolyDataWriter *w = vtkPolyDataWriter::New();
-    w->SetInputData(pd);
-    w->SetFileName(name);
-    w->Update();
-    w->Delete();
-}
-#endif
+// #ifdef DEBUG
+// void WriteVTK (const char *name, vtkPolyData *pd) {
+//     std::cout << "Writing " << name << std::endl;
+// 
+//     vtkPolyDataWriter *w = vtkPolyDataWriter::New();
+//     w->SetInputData(pd);
+//     w->SetFileName(name);
+//     w->Update();
+//     w->Delete();
+// }
+// #endif
 
 double GetAngle (const double *vA, const double *vB, const double *n) {
     // http://math.stackexchange.com/questions/878785/how-to-find-an-angle-in-range0-360-between-2-vectors
@@ -218,7 +218,7 @@ void WritePolys (const char *name, const PolysType &polys) {
         pd->InsertNextCell(VTK_POLYGON, cell);
     }
 
-    WriteVTK(name, pd);
+    // WriteVTK(name, pd);
 }
 #endif
 

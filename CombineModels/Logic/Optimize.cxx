@@ -27,25 +27,25 @@ limitations under the License.
 PreventEqualCaptPoints::PreventEqualCaptPoints (vtkPolyData *pdA, vtkPolyData *pdB) : pdA(pdA), pdB(pdB) {}
 
 void PreventEqualCaptPoints::Run () {
-#ifdef _DEBUG
-    WriteVTK("captA.vtk", pdA);
-    WriteVTK("captB.vtk", pdB);
-#endif
+// #ifdef _DEBUG
+//     WriteVTK("captA.vtk", pdA);
+//     WriteVTK("captB.vtk", pdB);
+// #endif
 
     pdA->BuildLinks();
     pdB->BuildLinks();
 
     Find(pdA, pdB, "A");
 
-#ifdef _DEBUG
-    WriteVTK("modB.vtk", pdB);
-#endif
+// #ifdef _DEBUG
+//     WriteVTK("modB.vtk", pdB);
+// #endif
 
     Find(pdB, pdA, "B");
 
-#ifdef _DEBUG
-    WriteVTK("modA.vtk", pdA);
-#endif
+// #ifdef _DEBUG
+//     WriteVTK("modA.vtk", pdA);
+// #endif
 }
 
 void PreventEqualCaptPoints::Find (vtkPolyData *pd, vtkPolyData *other, [[maybe_unused]] const std::string &name) {
@@ -365,13 +365,13 @@ void PreventEqualCaptPoints::Find (vtkPolyData *pd, vtkPolyData *other, [[maybe_
 
     other->RemoveDeletedCells();
 
-#ifdef _DEBUG
-    pdVerts->SetPoints(ptsVerts);
-
-    auto fileName = "verts" + name + ".vtk";
-
-    WriteVTK(fileName.c_str(), pdVerts);
-#endif
+// #ifdef _DEBUG
+//     pdVerts->SetPoints(ptsVerts);
+// 
+//     auto fileName = "verts" + name + ".vtk";
+// 
+//     WriteVTK(fileName.c_str(), pdVerts);
+// #endif
 
 }
 

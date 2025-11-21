@@ -144,10 +144,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
                 cleanA = Clean(pdA);
                 cleanB = Clean(pdB);
 
-#ifdef DEBUG
-            WriteVTK("modPdA.vtk", cleanA);
-            WriteVTK("modPdB.vtk", cleanB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA.vtk", cleanA);
+//             WriteVTK("modPdB.vtk", cleanB);
+// #endif
 
                 try {
                     PreventEqualCaptPoints(cleanA, cleanB).Run();
@@ -202,11 +202,11 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_1.vtk", modPdA);
-            WriteVTK("modPdB_1.vtk", modPdB);
-            WriteVTK("contLines.vtk", contLines);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_1.vtk", modPdA);
+//             WriteVTK("modPdB_1.vtk", modPdB);
+//             WriteVTK("contLines.vtk", contLines);
+// #endif
 
             if (contLines->GetNumberOfCells() == 0) {
                 vtkErrorMacro("There is no contact.");
@@ -284,10 +284,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_2.vtk", modPdA);
-            WriteVTK("modPdB_2.vtk", modPdB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_2.vtk", modPdA);
+//             WriteVTK("modPdB_2.vtk", modPdB);
+// #endif
 
             start = clock::now();
 
@@ -296,10 +296,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_3.vtk", modPdA);
-            WriteVTK("modPdB_3.vtk", modPdB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_3.vtk", modPdA);
+//             WriteVTK("modPdB_3.vtk", modPdB);
+// #endif
 
             start = clock::now();
 
@@ -308,10 +308,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_4.vtk", modPdA);
-            WriteVTK("modPdB_4.vtk", modPdB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_4.vtk", modPdA);
+//             WriteVTK("modPdB_4.vtk", modPdB);
+// #endif
 
             start = clock::now();
 
@@ -320,10 +320,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_5.vtk", modPdA);
-            WriteVTK("modPdB_5.vtk", modPdB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_5.vtk", modPdA);
+//             WriteVTK("modPdB_5.vtk", modPdB);
+// #endif
 
             start = clock::now();
 
@@ -332,10 +332,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_6.vtk", modPdA);
-            WriteVTK("modPdB_6.vtk", modPdB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_6.vtk", modPdA);
+//             WriteVTK("modPdB_6.vtk", modPdB);
+// #endif
 
             start = clock::now();
 
@@ -344,10 +344,10 @@ int vtkPolyDataBooleanFilter::RequestData(vtkInformation *request, vtkInformatio
 
             times.push_back(clock::now()-start);
 
-#ifdef DEBUG
-            WriteVTK("modPdA_7.vtk", modPdA);
-            WriteVTK("modPdB_7.vtk", modPdB);
-#endif
+// #ifdef DEBUG
+//             WriteVTK("modPdA_7.vtk", modPdA);
+//             WriteVTK("modPdB_7.vtk", modPdB);
+// #endif
 
             timePdA = pdA->GetMTime();
             timePdB = pdB->GetMTime();
@@ -2742,10 +2742,10 @@ bool vtkPolyDataBooleanFilter::CombineRegions () {
     vtkPolyData *pdA = cfA->GetOutput();
     vtkPolyData *pdB = cfB->GetOutput();
 
-#ifdef DEBUG
-    WriteVTK("modPdA_8.vtk", pdA);
-    WriteVTK("modPdB_8.vtk", pdB);
-#endif
+// #ifdef DEBUG
+//     WriteVTK("modPdA_8.vtk", pdA);
+//     WriteVTK("modPdB_8.vtk", pdB);
+// #endif
 
     if (OperMode == OPER_NONE) {
         resultA->ShallowCopy(pdA);
